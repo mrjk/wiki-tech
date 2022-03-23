@@ -1,5 +1,4 @@
-# One liners
-
+## Linux
 Collection of oneliners, stolen from: https://gist.github.com/mrjk/93b923ba97b71ca4226ac13048318685
 
 ### Docker
