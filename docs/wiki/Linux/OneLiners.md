@@ -1,4 +1,4 @@
-
+# One LIners
 
 List of oneliners
 
@@ -33,5 +33,5 @@ yaml2json
 python3 -c 'import sys, yaml; yaml.dump(yaml.safe_load(sys.stdin), sys.stdout)'
 ```
 
-# Ideas/TODO:
+## Ideas/TODO:
 See: https://www.digitalocean.com/community/tutorials/how-to-use-netcat-to-establish-and-test-tcp-and-udp-connections

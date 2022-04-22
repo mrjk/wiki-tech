@@ -1,21 +1,46 @@
-# Local Devops Station
+# NetworkManager
+
+
+
+## Basic configurations
+
+Check status:
+```
+systemctl status NetworkManager || systemctl status network-manager
+```
+
+
+## Advanced config
+
+
+### Spoof wifi mac address
+
+Wifi mac adress anon and spoof:
+```
+cat /etc/NetworkManager/conf.d/macspoof.conf 
+# [connection]
+# wifi.cloned-mac-address=b2:ee:ff:aa:bb:e2
+# wifi.scan-rand-mac-address=no
+
+# How to apply ?
+# systemctl  restart NetworkManager
+# HOw to check status ?
+# macchanger -s wlp2s0
+# ip link show wlp2s0
+```
+
+
+## Split DNS setup
 
 This setup aims to setup basic infra for local development.
-
-
 Consists in:
 * Providing DNS
 * HTTP proxy
 
-
-
-## DNS Management
-
 There are few methods to do that:
-* Split DNS with systemd-resolved
-* Unbound
+* Split DNS with systemd-resolved (See here ...)
 * NetworkManager + dnsmasq
-* Run DNSMasq in docker
+* Unbound
 
 ### NetworkManager + dnsmasq
 
@@ -57,6 +82,8 @@ address=/openshift-int.laplab/192.168.101.120
 
 
 ```
+
+### Apply and check
 
 Reload Network-Manager:
 ```
