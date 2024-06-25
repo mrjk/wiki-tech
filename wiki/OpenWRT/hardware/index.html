@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../../img/favicon.ico">
+    <title>Hardware &mdash; Jeznet Notes</title>
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/tonsky/FiraCode@1.206/distr/fira_code.css">
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.8.1/css/v4-shims.css">
+    <link rel="stylesheet" href="../../../css/theme.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+    <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script>
+        hljs.initHighlightingOnLoad();
+    </script> 
+</head>
+
+<body ontouchstart="">
+    <div id="container">
+        <aside>
+            <div class="home">
+                <div class="title">
+                    <button class="hamburger"></button>
+                    <a href="../../.." class="site-name"> Jeznet Notes</a>
+                </div>
+                <div class="search">
+                    <div role="search">
+    <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+        <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+    </form>
+</div>
+                </div>
+            </div>
+            <nav class="nav">
+                <ul class="root">
+                    <li class="toctree-l1">
+<a class="nav-item" href="../../..">Home</a></li>
+                    <li class="toctree-l1"><button class="section nav-item">Projects</button>
+<ul class="subnav">
+    <li class="toctree-l2"><a class="nav-item" href="../../../projects/">Index</a></li>
+</ul></li>
+                    <li class="toctree-l1"><button class="section nav-item">Wiki</button>
+<ul class="subnav">
+    <li class="toctree-l2"><button class="section nav-item hide">Devops</button>
+<ul class="subnav hide">
+    <li class="toctree-l3"><a class="nav-item" href="../../Devops/Ansible/">Ansible tips</a></li>
+</ul></li>
+    <li class="toctree-l2"><button class="section nav-item hide">Linux</button>
+<ul class="subnav hide">
+    <li class="toctree-l3"><a class="nav-item" href="../../Linux/Docker/">Docker</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../../Linux/NetworkManager/">NetworkManager</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../../Linux/OneLiners/">One LIners</a></li>
+    <li class="toctree-l3">
+<a class="nav-item" href="../../Linux/PythonDev/">PythonDev</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../../Linux/SystemdNetwork/">Systemd-network</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../../Linux/firewalld/">Firewalld</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../../Linux/ssh/">SSH</a></li>
+</ul></li>
+    <li class="toctree-l2"><button class="section nav-item hide">MySQL</button>
+<ul class="subnav hide">
+    <li class="toctree-l3"><a class="nav-item" href="../../MySQL/sql-cheat/">SQL Cheat Sheet</a></li>
+</ul></li>
+    <li class="toctree-l2"><button class="section nav-item hide">Notes</button>
+<ul class="subnav hide">
+    <li class="toctree-l3"><a class="nav-item" href="../../Notes/ExplainedShortly/">Learn quickly new techs</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../../Notes/Git/">Git</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../../Notes/LongLiners/">Long Liners</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../../Notes/MacOSX/">MacOSX tricks</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../../Notes/NoCoreUtils/">No Core Utils</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../../Notes/OneLiners/">One Liners</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../../Notes/VPNUsers/">VPN as users</a></li>
+</ul></li>
+    <li class="toctree-l2"><button class="section nav-item hide">OPNSense</button>
+<ul class="subnav hide">
+    <li class="toctree-l3"><a class="nav-item" href="../../OPNSense/basics/">Basics setups</a></li>
+</ul></li>
+    <li class="toctree-l2 current"><button class="section nav-item">OpenWRT</button>
+<ul class="subnav">
+    <li class="toctree-l3"><a class="nav-item" href="../backup/">Backup and restore OpenWRT</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../base/">OpenWRT</a></li>
+    <li class="toctree-l3 current"><a class="nav-item current" href="./">Hardware</a>
+<ul class="subnav">
+<li class="toctree-l4"><a class="nav-item toc" href="#tp-link-archer-c7">TP-Link Archer C7</a></li>
+<li class="toctree-l4"><a class="nav-item toc" href="#bad-performances-of-c7-v2">Bad performances of C7 v2</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+                </ul>
+            </nav>
+            <div class="repo">
+    <div class="link">
+        <a href="https://github.com/mrjk/wiki-tech" class="fa fa-github"> GitHub</a>
+    </div>
+    <div class="previous"><a href="../base/">&laquo; Previous</a></div>
+</div>
+        </aside>
+        <div id="spacer"><button class="arrow"></button></div>
+        <main>
+            <div class="home-top">
+                <button class="hamburger"></button>
+                <a href="../../.." class="site-name"> Jeznet Notes</a>
+            </div>
+            <div id="main">
+                <nav class="breadcrumbs">
+<ul>
+    <li>Wiki &raquo; </li><li>OpenWRT</li>
+</ul>
+</nav>
+                <div id="content"><h1 id="hardware">Hardware</h1>
+<h2 id="tp-link-archer-c7">TP-Link Archer C7</h2>
+<p>Diffrences between A7 and C7:
+https://www.tp-link.com/us/compare/?typeId=9&amp;productIds=26649%2C31387</p>
+<p>Model:</p>
+<pre><code>root@OpenWrt:~# dmesg | grep -i machin
+[    0.000000] MIPS: machine is TP-Link Archer C7 v2
+
+root@OpenWrt:~# cat /etc/os-release 
+NAME=&quot;OpenWrt&quot;
+VERSION=&quot;21.02.2&quot;
+ID=&quot;openwrt&quot;
+ID_LIKE=&quot;lede openwrt&quot;
+PRETTY_NAME=&quot;OpenWrt 21.02.2&quot;
+VERSION_ID=&quot;21.02.2&quot;
+HOME_URL=&quot;https://openwrt.org/&quot;
+BUG_URL=&quot;https://bugs.openwrt.org/&quot;
+SUPPORT_URL=&quot;https://forum.openwrt.org/&quot;
+BUILD_ID=&quot;r16495-bf0c965af0&quot;
+OPENWRT_BOARD=&quot;ath79/generic&quot;
+OPENWRT_ARCH=&quot;mips_24kc&quot;
+OPENWRT_TAINTS=&quot;&quot;
+OPENWRT_DEVICE_MANUFACTURER=&quot;OpenWrt&quot;
+OPENWRT_DEVICE_MANUFACTURER_URL=&quot;https://openwrt.org/&quot;
+OPENWRT_DEVICE_PRODUCT=&quot;Generic&quot;
+OPENWRT_DEVICE_REVISION=&quot;v0&quot;
+OPENWRT_RELEASE=&quot;OpenWrt 21.02.2 r16495-bf0c965af0&quot;
+</code></pre>
+<h2 id="bad-performances-of-c7-v2">Bad performances of C7 v2</h2>
+<p>Sources:</p>
+<ul>
+<li>https://forum.openwrt.org/t/please-consider-ath10k-non-ct-drivers-instead-of-ct/85051</li>
+<li>https://forum.openwrt.org/t/why-the-switch-to-unstable-ath10k-ct/27258/39</li>
+<li>https://forum.openwrt.org/t/why-the-switch-to-unstable-ath10k-ct/27258/8</li>
+<li>https://forum.openwrt.org/t/changing-to-non-ct-drivers-via-opkg/64070</li>
+<li>https://github.com/greearb/ath10k-ct/issues/139</li>
+</ul>
+<p>Poor wifi performances since 2019:</p>
+<pre><code># opkg list-installed  | grep ath10k
+ath10k-board-qca988x - 20211216-1
+ath10k-firmware-qca988x-ct - 2020-11-08-1
+kmod-ath10k-ct - 5.4.179+2021-09-22-e6a7d5b5-1
+
+# opkg remove ath10k-firmware-qca988x-ct  kmod-ath10k-ct
+Removing package ath10k-firmware-qca988x-ct from root...
+Removing package kmod-ath10k-ct from root...
+
+# opkg list-installed  | grep ath10k
+ath10k-board-qca988x - 20211216-1
+
+# opkg install ath10k-firmware-qca988x kmod-ath10k
+Installing ath10k-firmware-qca988x (20211216-1) to root...
+Downloading https://downloads.openwrt.org/releases/21.02.2/packages/mips_24kc/base/ath10k-firmware-qca988x_20211216-1_mips_24kc.ipk
+Installing kmod-ath10k (5.4.179+5.10.85-1-1) to root...
+Downloading https://downloads.openwrt.org/releases/21.02.2/targets/ath79/generic/packages/kmod-ath10k_5.4.179%2b5.10.85-1-1_mips_24kc.ipk
+Configuring kmod-ath10k.
+Configuring ath10k-firmware-qca988x.
+
+# reboot
+
+</code></pre>
+<p>Then:</p>
+<pre><code># dmesg|grep firmware
+[    0.348797] 0x000000020000-0x000000ff0000 : &quot;firmware&quot;
+[    0.356593] 2 tplink-fw partitions found on MTD device firmware
+[    0.362635] Creating 2 MTD partitions on &quot;firmware&quot;:
+[   15.532206] ath10k_pci 0000:00:00.0: firmware ver 10.2.4-1.0-00047 api 5 features no-p2p,raw-mode,mfp,allows-mesh-bcast crc32 35bd9258
+[   35.741643] ath10k_pci 0000:00:00.0: pdev param 0 not supported by firmware
+
+</code></pre></div>
+                <footer>
+    <div class="footer-buttons">
+        <div class="previous"><a href="../base/" title="OpenWRT"><span>Previous</span></a></div>
+    </div>
+    <div class="footer-note">
+        <p>
+            Built with <a href="http://www.mkdocs.org">MkDocs</a> using
+            <a href="https://github.com/daizutabi/mkdocs-ivory">Ivory theme</a>.
+        </p>
+    </div>
+</footer>
+            </div>
+        </main>
+    </div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js"></script>
+    <script src="../../../search/main.js"></script>
+</body>
+
+</html>

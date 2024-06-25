@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../../img/favicon.ico">
+    <title>VPN as users &mdash; Jeznet Notes</title>
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/tonsky/FiraCode@1.206/distr/fira_code.css">
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.8.1/css/v4-shims.css">
+    <link rel="stylesheet" href="../../../css/theme.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+    <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script>
+        hljs.initHighlightingOnLoad();
+    </script> 
+</head>
+
+<body ontouchstart="">
+    <div id="container">
+        <aside>
+            <div class="home">
+                <div class="title">
+                    <button class="hamburger"></button>
+                    <a href="../../.." class="site-name"> Jeznet Notes</a>
+                </div>
+                <div class="search">
+                    <div role="search">
+    <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+        <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+    </form>
+</div>
+                </div>
+            </div>
+            <nav class="nav">
+                <ul class="root">
+                    <li class="toctree-l1">
+<a class="nav-item" href="../../..">Home</a></li>
+                    <li class="toctree-l1"><button class="section nav-item">Projects</button>
+<ul class="subnav">
+    <li class="toctree-l2"><a class="nav-item" href="../../../projects/">Index</a></li>
+</ul></li>
+                    <li class="toctree-l1"><button class="section nav-item">Wiki</button>
+<ul class="subnav">
+    <li class="toctree-l2"><button class="section nav-item hide">Devops</button>
+<ul class="subnav hide">
+    <li class="toctree-l3"><a class="nav-item" href="../../Devops/Ansible/">Ansible tips</a></li>
+</ul></li>
+    <li class="toctree-l2"><button class="section nav-item hide">Linux</button>
+<ul class="subnav hide">
+    <li class="toctree-l3"><a class="nav-item" href="../../Linux/Docker/">Docker</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../../Linux/NetworkManager/">NetworkManager</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../../Linux/OneLiners/">One LIners</a></li>
+    <li class="toctree-l3">
+<a class="nav-item" href="../../Linux/PythonDev/">PythonDev</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../../Linux/SystemdNetwork/">Systemd-network</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../../Linux/firewalld/">Firewalld</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../../Linux/ssh/">SSH</a></li>
+</ul></li>
+    <li class="toctree-l2"><button class="section nav-item hide">MySQL</button>
+<ul class="subnav hide">
+    <li class="toctree-l3"><a class="nav-item" href="../../MySQL/sql-cheat/">SQL Cheat Sheet</a></li>
+</ul></li>
+    <li class="toctree-l2 current"><button class="section nav-item">Notes</button>
+<ul class="subnav">
+    <li class="toctree-l3"><a class="nav-item" href="../ExplainedShortly/">Learn quickly new techs</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../Git/">Git</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../LongLiners/">Long Liners</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../MacOSX/">MacOSX tricks</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../NoCoreUtils/">No Core Utils</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../OneLiners/">One Liners</a></li>
+    <li class="toctree-l3 current"><a class="nav-item current" href="./">VPN as users</a>
+<ul class="subnav">
+<li class="toctree-l4"><a class="nav-item toc" href="#force-split-tunneling">Force split tunneling</a></li>
+<li class="toctree-l4"><a class="nav-item toc" href="#pizzabox-tools">Pizzabox tools</a></li>
+</ul></li>
+</ul></li>
+    <li class="toctree-l2"><button class="section nav-item hide">OPNSense</button>
+<ul class="subnav hide">
+    <li class="toctree-l3"><a class="nav-item" href="../../OPNSense/basics/">Basics setups</a></li>
+</ul></li>
+    <li class="toctree-l2"><button class="section nav-item hide">OpenWRT</button>
+<ul class="subnav hide">
+    <li class="toctree-l3"><a class="nav-item" href="../../OpenWRT/backup/">Backup and restore OpenWRT</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../../OpenWRT/base/">OpenWRT</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../../OpenWRT/hardware/">Hardware</a></li>
+</ul></li>
+</ul></li>
+                </ul>
+            </nav>
+            <div class="repo">
+    <div class="link">
+        <a href="https://github.com/mrjk/wiki-tech" class="fa fa-github"> GitHub</a>
+    </div>
+    <div class="previous"><a href="../OneLiners/">&laquo; Previous</a></div>
+    <div class="next"><a href="../../OPNSense/basics/">Next &raquo;</a></div>
+</div>
+        </aside>
+        <div id="spacer"><button class="arrow"></button></div>
+        <main>
+            <div class="home-top">
+                <button class="hamburger"></button>
+                <a href="../../.." class="site-name"> Jeznet Notes</a>
+            </div>
+            <div id="main">
+                <nav class="breadcrumbs">
+<ul>
+    <li>Wiki &raquo; </li><li>Notes</li>
+</ul>
+</nav>
+                <div id="content"><h1 id="vpn-as-users">VPN as users</h1>
+<p>This page is relevant when you have to deal with corporate VPN and associated stuffs.</p>
+<h2 id="force-split-tunneling">Force split tunneling</h2>
+<p>Split tunneling allows you to access your local network resources, even if your VPN provider does not allow it. The trick of those VPN client is to remove locale routes and keep only the local router route. There are few scenarios:</p>
+<ul>
+<li>The VPN client does not remove LAN routes: You are fine, you are already in split tunneling</li>
+<li>The VPN client remove LAN routes: You can manually add the route after the VPN started</li>
+<li>The VPN client enforce removal of LAN routes: When a route is added, the VPN client will remove it straight after it has been added.</li>
+</ul>
+<p>Be aware that bypassing your VPN policy may expose your VPN network, or make your IT security team unhappy. But hopefully, this is completely transparent, and there is no way to see that you are bypassing those policy from a network point of view.</p>
+<h3 id="not-enforced-route-removal">Not enforced Route Removal</h3>
+<p>This setup is relevant when you have only one pizzabox that connect to the VPN, but you don't want to work on that pizzabox.</p>
+<h4 id="macosx">MacOSX</h4>
+<p>The command is the folllowing:</p>
+<pre><code>sudo route -n add -net NETWORK/MASK ROUTER
+</code></pre>
+<p>As examples:</p>
+<pre><code>sudo route -n add -net 192.168.0.1/24 192.168.0.1
+sudo route -n add -net 10.0.0.0/8 192.168.0.254
+</code></pre>
+<p>If you want to change the default route:</p>
+<pre><code>route delete default
+route add default 192.168.0.1
+</code></pre>
+<h3 id="enforced-route-removal">Enforced Route Removal</h3>
+<p>For this scenario, you need to have control on your LAN router. </p>
+<h4 id="allow-ssh-connections">Allow SSH connections</h4>
+<ul>
+<li>Easiest scenario is to have a SSH access on your router, which is easy if you run OpenWRT,OPNSense or any linux based router that provides a SSH access.</li>
+<li>If no SSH is available, you will need to forward internally a SSH port to your pizzabox from the router IP. Port forward should be something like: 192.168.0.1:2222 -&gt; pizzabox:22</li>
+</ul>
+<p>Then configure your SSH client to access your pizzabox, either by:</p>
+<ul>
+<li>setting up your router as a SSH jumphost</li>
+<li>setting up your SSH client on the forwarded port of your router.</li>
+</ul>
+<p>Check you can access your pizza box via SSH when the VPN is connected. If that works, we can leverage <code>sshuttle</code>. Of course, you can access to you local LAN resources by doing the same thing, but in the other way (but it will not be practical if you're using port forwqarding)</p>
+<h4 id="expose-vpn-resources-via-sshuttle">Expose VPN resources via sshuttle</h4>
+<p>sshuttle will create a SSH tunnel to your pizzabox:</p>
+<pre><code>sshuttle -v --remote pizzabox-via-router 10.55.0.0/16 10.50.58.0/24 142.117.120.0/22  142.117.244.0/22  142.117.120.0/22 10.36.100.0/22 10.36.132.0/22 10.50.50.0/24 142.182.130.85/22 142.112.0.0/12  142.182.0.0/16
+</code></pre>
+<p>You can add the <code>--dns</code> option if you also want to forward the DNS traffic.</p>
+<h4 id="expose-web-resources">Expose web resources</h4>
+<p>The trick here is to configure your browser to use a socks proxy</p>
+<pre><code>ssh -vv -N -D 7777 pizzabox
+</code></pre>
+<p>Then you can configure your favorite browser to use a socks proxy on <code>127.0.0.1:7777</code></p>
+<h4 id="expose-more-resources">Expose more resources</h4>
+<p>You can set SSH reverse proxy, for example to access to your socks resources, here we want to access to barrier server:</p>
+<pre><code>ssh -vv -N  -R 24800:localhost:24800 pizzabox
+</code></pre>
+<p>On the client side, you just have to connect to <code>localhost:24800</code> instead of <code>pizzabox:24800</code></p>
+<h2 id="pizzabox-tools">Pizzabox tools</h2>
+<p>There is a list of useful tools to have:</p>
+<ul>
+<li>SSH listening on port 22</li>
+<li>SOCKS proxy (for web access)</li>
+<li>dnsmasq instance, for DNS traffic (to resolve any VPN domains)</li>
+<li>Barrier, for software KVM</li>
+</ul>
+<h3 id="dnsmasq">dnsmasq</h3>
+<p>Run a dnsmasq instance locally:</p>
+<pre><code>/usr/local/Cellar/dnsmasq/2.86/sbin/dnsmasq --no-daemon  --listen-address=127.0.0.1 --port 5353
+</code></pre></div>
+                <footer>
+    <div class="footer-buttons">
+        <div class="previous"><a href="../OneLiners/" title="One Liners"><span>Previous</span></a></div>
+        <div class="next"><a href="../../OPNSense/basics/" title="Basics setups"><span>Next</span></a></div>
+    </div>
+    <div class="footer-note">
+        <p>
+            Built with <a href="http://www.mkdocs.org">MkDocs</a> using
+            <a href="https://github.com/daizutabi/mkdocs-ivory">Ivory theme</a>.
+        </p>
+    </div>
+</footer>
+            </div>
+        </main>
+    </div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js"></script>
+    <script src="../../../search/main.js"></script>
+</body>
+
+</html>

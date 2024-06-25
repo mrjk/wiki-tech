@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../../img/favicon.ico">
+    <title>No Core Utils &mdash; Jeznet Notes</title>
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/tonsky/FiraCode@1.206/distr/fira_code.css">
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.8.1/css/v4-shims.css">
+    <link rel="stylesheet" href="../../../css/theme.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+    <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script>
+        hljs.initHighlightingOnLoad();
+    </script> 
+</head>
+
+<body ontouchstart="">
+    <div id="container">
+        <aside>
+            <div class="home">
+                <div class="title">
+                    <button class="hamburger"></button>
+                    <a href="../../.." class="site-name"> Jeznet Notes</a>
+                </div>
+                <div class="search">
+                    <div role="search">
+    <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+        <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+    </form>
+</div>
+                </div>
+            </div>
+            <nav class="nav">
+                <ul class="root">
+                    <li class="toctree-l1">
+<a class="nav-item" href="../../..">Home</a></li>
+                    <li class="toctree-l1"><button class="section nav-item">Projects</button>
+<ul class="subnav">
+    <li class="toctree-l2"><a class="nav-item" href="../../../projects/">Index</a></li>
+</ul></li>
+                    <li class="toctree-l1"><button class="section nav-item">Wiki</button>
+<ul class="subnav">
+    <li class="toctree-l2"><button class="section nav-item hide">Devops</button>
+<ul class="subnav hide">
+    <li class="toctree-l3"><a class="nav-item" href="../../Devops/Ansible/">Ansible tips</a></li>
+</ul></li>
+    <li class="toctree-l2"><button class="section nav-item hide">Linux</button>
+<ul class="subnav hide">
+    <li class="toctree-l3"><a class="nav-item" href="../../Linux/Docker/">Docker</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../../Linux/NetworkManager/">NetworkManager</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../../Linux/OneLiners/">One LIners</a></li>
+    <li class="toctree-l3">
+<a class="nav-item" href="../../Linux/PythonDev/">PythonDev</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../../Linux/SystemdNetwork/">Systemd-network</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../../Linux/firewalld/">Firewalld</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../../Linux/ssh/">SSH</a></li>
+</ul></li>
+    <li class="toctree-l2"><button class="section nav-item hide">MySQL</button>
+<ul class="subnav hide">
+    <li class="toctree-l3"><a class="nav-item" href="../../MySQL/sql-cheat/">SQL Cheat Sheet</a></li>
+</ul></li>
+    <li class="toctree-l2 current"><button class="section nav-item">Notes</button>
+<ul class="subnav">
+    <li class="toctree-l3"><a class="nav-item" href="../ExplainedShortly/">Learn quickly new techs</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../Git/">Git</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../LongLiners/">Long Liners</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../MacOSX/">MacOSX tricks</a></li>
+    <li class="toctree-l3 current"><a class="nav-item current" href="./">No Core Utils</a>
+<ul class="subnav">
+<li class="toctree-l4"><a class="nav-item toc" href="#core-utils-alternatives">Core utils alternatives</a></li>
+<li class="toctree-l4"><a class="nav-item toc" href="#alternative-images">Alternative images</a></li>
+<li class="toctree-l4"><a class="nav-item toc" href="#install-coreutils-temporarly">Install coreutils temporarly</a></li>
+<li class="toctree-l4"><a class="nav-item toc" href="#tips-and-tricks">Tips and tricks</a></li>
+</ul></li>
+    <li class="toctree-l3"><a class="nav-item" href="../OneLiners/">One Liners</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../VPNUsers/">VPN as users</a></li>
+</ul></li>
+    <li class="toctree-l2"><button class="section nav-item hide">OPNSense</button>
+<ul class="subnav hide">
+    <li class="toctree-l3"><a class="nav-item" href="../../OPNSense/basics/">Basics setups</a></li>
+</ul></li>
+    <li class="toctree-l2"><button class="section nav-item hide">OpenWRT</button>
+<ul class="subnav hide">
+    <li class="toctree-l3"><a class="nav-item" href="../../OpenWRT/backup/">Backup and restore OpenWRT</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../../OpenWRT/base/">OpenWRT</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../../OpenWRT/hardware/">Hardware</a></li>
+</ul></li>
+</ul></li>
+                </ul>
+            </nav>
+            <div class="repo">
+    <div class="link">
+        <a href="https://github.com/mrjk/wiki-tech" class="fa fa-github"> GitHub</a>
+    </div>
+    <div class="previous"><a href="../MacOSX/">&laquo; Previous</a></div>
+    <div class="next"><a href="../OneLiners/">Next &raquo;</a></div>
+</div>
+        </aside>
+        <div id="spacer"><button class="arrow"></button></div>
+        <main>
+            <div class="home-top">
+                <button class="hamburger"></button>
+                <a href="../../.." class="site-name"> Jeznet Notes</a>
+            </div>
+            <div id="main">
+                <nav class="breadcrumbs">
+<ul>
+    <li>Wiki &raquo; </li><li>Notes</li>
+</ul>
+</nav>
+                <div id="content"><h1 id="no-core-utils">No Core Utils</h1>
+<p>Sometimes, while troubleshooting containers, you are lacking of some most basic commands, such as ping, ifconfig/ip commands.
+This guide is intended for running containers, when it's already too late.</p>
+<h2 id="core-utils-alternatives">Core utils alternatives</h2>
+<h3 id="test-if-a-tcp-is-open-or-not">Test if a TCP is open or not</h3>
+<pre><code>$ telnet $host $port
+$ (echo &gt;/dev/tcp/$host/$port) &amp;&gt;/dev/null &amp;&amp; echo &quot;open&quot; || echo &quot;closed&quot;
+</code></pre>
+<h2 id="alternative-images">Alternative images</h2>
+<p>Usually you will want this to troublehoot network issue. This image provides a bunch of tools of network troubleshooting. You
+can inject</p>
+<pre><code># No persistancy
+docker run --rm -ti --network barbu wbitt/network-multitool:latest  /bin/bash
+
+# As daemon
+docker run -d -n netdebug wbitt/network-multitool
+docker exec -it netdebug /bin/bash
+</code></pre>
+<h2 id="install-coreutils-temporarly">Install coreutils temporarly</h2>
+<p>We can download static builds of busybox/toybox:</p>
+<pre><code>$ wget http://landley.net/toybox/bin/toybox-i686 -O /usr/local/bin/toybox ; chmod +x /usr/local/bin/toybox
+</code></pre>
+<p>To list all available commands:</p>
+<pre><code>$ toybox
+</code></pre>
+<p>Then you can use this way:</p>
+<pre><code>toybox ping google.com
+toybox netstat -lntpu
+toybox telnet toto.com 80
+</code></pre>
+<h2 id="tips-and-tricks">Tips and tricks</h2>
+<p>Get a root mysql shell:</p>
+<pre><code>mysql -p$MYSQL_ROOT_PASSWORD
+mysqldump -p$MYSQL_ROOT_PASSWORD DATABASE | less
+watch -n 0.2 mysqladmin -p$MYSQL_ROOT_PASSWORD proc
+</code></pre></div>
+                <footer>
+    <div class="footer-buttons">
+        <div class="previous"><a href="../MacOSX/" title="MacOSX tricks"><span>Previous</span></a></div>
+        <div class="next"><a href="../OneLiners/" title="One Liners"><span>Next</span></a></div>
+    </div>
+    <div class="footer-note">
+        <p>
+            Built with <a href="http://www.mkdocs.org">MkDocs</a> using
+            <a href="https://github.com/daizutabi/mkdocs-ivory">Ivory theme</a>.
+        </p>
+    </div>
+</footer>
+            </div>
+        </main>
+    </div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js"></script>
+    <script src="../../../search/main.js"></script>
+</body>
+
+</html>

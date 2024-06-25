@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../../img/favicon.ico">
+    <title>Systemd-network &mdash; Jeznet Notes</title>
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/tonsky/FiraCode@1.206/distr/fira_code.css">
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.8.1/css/v4-shims.css">
+    <link rel="stylesheet" href="../../../css/theme.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+    <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script>
+        hljs.initHighlightingOnLoad();
+    </script> 
+</head>
+
+<body ontouchstart="">
+    <div id="container">
+        <aside>
+            <div class="home">
+                <div class="title">
+                    <button class="hamburger"></button>
+                    <a href="../../.." class="site-name"> Jeznet Notes</a>
+                </div>
+                <div class="search">
+                    <div role="search">
+    <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+        <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+    </form>
+</div>
+                </div>
+            </div>
+            <nav class="nav">
+                <ul class="root">
+                    <li class="toctree-l1">
+<a class="nav-item" href="../../..">Home</a></li>
+                    <li class="toctree-l1"><button class="section nav-item">Projects</button>
+<ul class="subnav">
+    <li class="toctree-l2"><a class="nav-item" href="../../../projects/">Index</a></li>
+</ul></li>
+                    <li class="toctree-l1"><button class="section nav-item">Wiki</button>
+<ul class="subnav">
+    <li class="toctree-l2"><button class="section nav-item hide">Devops</button>
+<ul class="subnav hide">
+    <li class="toctree-l3"><a class="nav-item" href="../../Devops/Ansible/">Ansible tips</a></li>
+</ul></li>
+    <li class="toctree-l2 current"><button class="section nav-item">Linux</button>
+<ul class="subnav">
+    <li class="toctree-l3"><a class="nav-item" href="../Docker/">Docker</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../NetworkManager/">NetworkManager</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../OneLiners/">One LIners</a></li>
+    <li class="toctree-l3">
+<a class="nav-item" href="../PythonDev/">PythonDev</a></li>
+    <li class="toctree-l3 current"><a class="nav-item current" href="./">Systemd-network</a>
+<ul class="subnav">
+<li class="toctree-l4"><a class="nav-item toc" href="#disabling-other-network-manager">Disabling other network manager</a></li>
+<li class="toctree-l4"><a class="nav-item toc" href="#basic-networking">Basic networking</a></li>
+<li class="toctree-l4"><a class="nav-item toc" href="#other-stuffs">Other stuffs</a></li>
+</ul></li>
+    <li class="toctree-l3"><a class="nav-item" href="../firewalld/">Firewalld</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../ssh/">SSH</a></li>
+</ul></li>
+    <li class="toctree-l2"><button class="section nav-item hide">MySQL</button>
+<ul class="subnav hide">
+    <li class="toctree-l3"><a class="nav-item" href="../../MySQL/sql-cheat/">SQL Cheat Sheet</a></li>
+</ul></li>
+    <li class="toctree-l2"><button class="section nav-item hide">Notes</button>
+<ul class="subnav hide">
+    <li class="toctree-l3"><a class="nav-item" href="../../Notes/ExplainedShortly/">Learn quickly new techs</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../../Notes/Git/">Git</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../../Notes/LongLiners/">Long Liners</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../../Notes/MacOSX/">MacOSX tricks</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../../Notes/NoCoreUtils/">No Core Utils</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../../Notes/OneLiners/">One Liners</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../../Notes/VPNUsers/">VPN as users</a></li>
+</ul></li>
+    <li class="toctree-l2"><button class="section nav-item hide">OPNSense</button>
+<ul class="subnav hide">
+    <li class="toctree-l3"><a class="nav-item" href="../../OPNSense/basics/">Basics setups</a></li>
+</ul></li>
+    <li class="toctree-l2"><button class="section nav-item hide">OpenWRT</button>
+<ul class="subnav hide">
+    <li class="toctree-l3"><a class="nav-item" href="../../OpenWRT/backup/">Backup and restore OpenWRT</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../../OpenWRT/base/">OpenWRT</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../../OpenWRT/hardware/">Hardware</a></li>
+</ul></li>
+</ul></li>
+                </ul>
+            </nav>
+            <div class="repo">
+    <div class="link">
+        <a href="https://github.com/mrjk/wiki-tech" class="fa fa-github"> GitHub</a>
+    </div>
+    <div class="previous"><a href="../PythonDev/">&laquo; Previous</a></div>
+    <div class="next"><a href="../firewalld/">Next &raquo;</a></div>
+</div>
+        </aside>
+        <div id="spacer"><button class="arrow"></button></div>
+        <main>
+            <div class="home-top">
+                <button class="hamburger"></button>
+                <a href="../../.." class="site-name"> Jeznet Notes</a>
+            </div>
+            <div id="main">
+                <nav class="breadcrumbs">
+<ul>
+    <li>Wiki &raquo; </li><li>Linux</li>
+</ul>
+</nav>
+                <div id="content"><h1 id="systemd-network">Systemd-network</h1>
+<p>This describes a possible network setup for a Debian 11 server. </p>
+<p>Under Debian like distros, three way to manage network:</p>
+<ul>
+<li>Old <code>/etc/networks/interfaces{,.d}</code> files</li>
+<li>NetworkManager service</li>
+<li>Systemd-network interfaces, under ``</li>
+</ul>
+<p>Systemd network resources:</p>
+<ul>
+<li>Debian manual: https://wiki.debian.org/SystemdNetworkd</li>
+</ul>
+<h2 id="disabling-other-network-manager">Disabling other network manager</h2>
+<p>Disable Network Manager:</p>
+<pre><code>systemctl  disable --now  NetworkManager
+</code></pre>
+<p>And ensure network scripts are empty (under Debian based OSes)</p>
+<pre><code>$ tree /etc/network/interfaces*
+/etc/network/interfaces [error opening dir]
+/etc/network/interfaces.d
+
+0 directories, 0 files
+</code></pre>
+<pre><code>systemctl status systemd-networkd
+systemctl  disable --noNetworkManager.service 
+</code></pre>
+<h2 id="basic-networking">Basic networking</h2>
+<p>Enable and check systemd:</p>
+<pre><code>systemctl enable systemd-networkd
+systemctl status systemd-networkd
+</code></pre>
+<p>Basic DHCP network:</p>
+<pre><code>$ cat /etc/systemd/network/99-default.network
+[Match]
+Name = en* eth*
+
+[Network]
+DHCP = yes
+
+</code></pre>
+<p>When a files has been modified, there is no <code>reload</code>:</p>
+<pre><code>systemctl restart systemd-networkd
+</code></pre>
+<h3 id="dhcp-and-statics-ips-on-the-same-interface">DHCP and statics IPs on the same interface</h3>
+<pre><code>$ cat /etc/systemd/network/50-server1.network 
+[Match]
+Name=enp1s0
+
+[Network]
+DHCP=yes
+Address=192.168.42.16/24
+Address=192.168.42.17/24
+Address=192.168.42.18/24
+Address=192.168.42.19/24
+#DNS=8.8.8.8
+#DNS=8.8.4.4
+
+</code></pre>
+<h2 id="other-stuffs">Other stuffs</h2>
+<p>Some other stuffs to try.</p>
+<h3 id="local-bridge-with-static-ip">Local bridge with static IP</h3>
+<p>Let's create a new <code>netwdev</code> unit:</p>
+<pre><code>$ cat /etc/systemd/network/20-br_cloud.netdev
+[NetDev]
+Name=br_cloud
+Kind=bridge
+# To avoid random mac at each boot
+# MACAddress=xx:xx:xx:xx:xx:xx
+
+[Bridge]
+STP=false
+</code></pre>
+<p>With an IP:</p>
+<pre><code class="language-bash">$ cat /etc/systemd/network/21-br_cloud.network
+[Match]
+Name=br_cloud
+
+[Network]
+Address=10.1.0.11/24
+ConfigureWithoutCarrier=yes
+</code></pre></div>
+                <footer>
+    <div class="footer-buttons">
+        <div class="previous"><a href="../PythonDev/" title="PythonDev"><span>Previous</span></a></div>
+        <div class="next"><a href="../firewalld/" title="Firewalld"><span>Next</span></a></div>
+    </div>
+    <div class="footer-note">
+        <p>
+            Built with <a href="http://www.mkdocs.org">MkDocs</a> using
+            <a href="https://github.com/daizutabi/mkdocs-ivory">Ivory theme</a>.
+        </p>
+    </div>
+</footer>
+            </div>
+        </main>
+    </div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js"></script>
+    <script src="../../../search/main.js"></script>
+</body>
+
+</html>

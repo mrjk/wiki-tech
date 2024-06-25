@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../../img/favicon.ico">
+    <title>Ansible tips &mdash; Jeznet Notes</title>
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/tonsky/FiraCode@1.206/distr/fira_code.css">
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.8.1/css/v4-shims.css">
+    <link rel="stylesheet" href="../../../css/theme.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+    <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script>
+        hljs.initHighlightingOnLoad();
+    </script> 
+</head>
+
+<body ontouchstart="">
+    <div id="container">
+        <aside>
+            <div class="home">
+                <div class="title">
+                    <button class="hamburger"></button>
+                    <a href="../../.." class="site-name"> Jeznet Notes</a>
+                </div>
+                <div class="search">
+                    <div role="search">
+    <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+        <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+    </form>
+</div>
+                </div>
+            </div>
+            <nav class="nav">
+                <ul class="root">
+                    <li class="toctree-l1">
+<a class="nav-item" href="../../..">Home</a></li>
+                    <li class="toctree-l1"><button class="section nav-item">Projects</button>
+<ul class="subnav">
+    <li class="toctree-l2"><a class="nav-item" href="../../../projects/">Index</a></li>
+</ul></li>
+                    <li class="toctree-l1"><button class="section nav-item">Wiki</button>
+<ul class="subnav">
+    <li class="toctree-l2 current"><button class="section nav-item">Devops</button>
+<ul class="subnav">
+    <li class="toctree-l3 current"><a class="nav-item current" href="./">Ansible tips</a>
+<ul class="subnav">
+<li class="toctree-l4"><a class="nav-item toc" href="#jinja-syntax">Jinja syntax</a></li>
+</ul></li>
+</ul></li>
+    <li class="toctree-l2"><button class="section nav-item hide">Linux</button>
+<ul class="subnav hide">
+    <li class="toctree-l3"><a class="nav-item" href="../../Linux/Docker/">Docker</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../../Linux/NetworkManager/">NetworkManager</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../../Linux/OneLiners/">One LIners</a></li>
+    <li class="toctree-l3">
+<a class="nav-item" href="../../Linux/PythonDev/">PythonDev</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../../Linux/SystemdNetwork/">Systemd-network</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../../Linux/firewalld/">Firewalld</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../../Linux/ssh/">SSH</a></li>
+</ul></li>
+    <li class="toctree-l2"><button class="section nav-item hide">MySQL</button>
+<ul class="subnav hide">
+    <li class="toctree-l3"><a class="nav-item" href="../../MySQL/sql-cheat/">SQL Cheat Sheet</a></li>
+</ul></li>
+    <li class="toctree-l2"><button class="section nav-item hide">Notes</button>
+<ul class="subnav hide">
+    <li class="toctree-l3"><a class="nav-item" href="../../Notes/ExplainedShortly/">Learn quickly new techs</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../../Notes/Git/">Git</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../../Notes/LongLiners/">Long Liners</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../../Notes/MacOSX/">MacOSX tricks</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../../Notes/NoCoreUtils/">No Core Utils</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../../Notes/OneLiners/">One Liners</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../../Notes/VPNUsers/">VPN as users</a></li>
+</ul></li>
+    <li class="toctree-l2"><button class="section nav-item hide">OPNSense</button>
+<ul class="subnav hide">
+    <li class="toctree-l3"><a class="nav-item" href="../../OPNSense/basics/">Basics setups</a></li>
+</ul></li>
+    <li class="toctree-l2"><button class="section nav-item hide">OpenWRT</button>
+<ul class="subnav hide">
+    <li class="toctree-l3"><a class="nav-item" href="../../OpenWRT/backup/">Backup and restore OpenWRT</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../../OpenWRT/base/">OpenWRT</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../../OpenWRT/hardware/">Hardware</a></li>
+</ul></li>
+</ul></li>
+                </ul>
+            </nav>
+            <div class="repo">
+    <div class="link">
+        <a href="https://github.com/mrjk/wiki-tech" class="fa fa-github"> GitHub</a>
+    </div>
+    <div class="previous"><a href="../../../projects/">&laquo; Previous</a></div>
+    <div class="next"><a href="../../Linux/Docker/">Next &raquo;</a></div>
+</div>
+        </aside>
+        <div id="spacer"><button class="arrow"></button></div>
+        <main>
+            <div class="home-top">
+                <button class="hamburger"></button>
+                <a href="../../.." class="site-name"> Jeznet Notes</a>
+            </div>
+            <div id="main">
+                <nav class="breadcrumbs">
+<ul>
+    <li>Wiki &raquo; </li><li>Devops</li>
+</ul>
+</nav>
+                <div id="content"><h1 id="ansible-tips">Ansible tips</h1>
+<h2 id="jinja-syntax">Jinja syntax</h2>
+<p>Count the lenght of items:</p>
+<pre><code>- hosts: localhost
+  gather_facts: false
+  vars:
+    a_string: abcd1234
+    a_list: ['a', 'short', 'list']
+    a_dict: {'a': 'dictionary', 'with': 'values'}
+  tasks:
+  - debug:
+      msg: |
+        [
+          &quot;a_string length: {{ a_string | length }}&quot;,
+          &quot;a_list length: {{ a_list | length }}&quot;,
+          &quot;a_dict length: {{ a_dict | length }}&quot;
+        ]
+</code></pre></div>
+                <footer>
+    <div class="footer-buttons">
+        <div class="previous"><a href="../../../projects/" title="Index"><span>Previous</span></a></div>
+        <div class="next"><a href="../../Linux/Docker/" title="Docker"><span>Next</span></a></div>
+    </div>
+    <div class="footer-note">
+        <p>
+            Built with <a href="http://www.mkdocs.org">MkDocs</a> using
+            <a href="https://github.com/daizutabi/mkdocs-ivory">Ivory theme</a>.
+        </p>
+    </div>
+</footer>
+            </div>
+        </main>
+    </div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js"></script>
+    <script src="../../../search/main.js"></script>
+</body>
+
+</html>

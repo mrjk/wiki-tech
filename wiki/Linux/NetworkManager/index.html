@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../../img/favicon.ico">
+    <title>NetworkManager &mdash; Jeznet Notes</title>
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/tonsky/FiraCode@1.206/distr/fira_code.css">
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.8.1/css/v4-shims.css">
+    <link rel="stylesheet" href="../../../css/theme.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+    <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script>
+        hljs.initHighlightingOnLoad();
+    </script> 
+</head>
+
+<body ontouchstart="">
+    <div id="container">
+        <aside>
+            <div class="home">
+                <div class="title">
+                    <button class="hamburger"></button>
+                    <a href="../../.." class="site-name"> Jeznet Notes</a>
+                </div>
+                <div class="search">
+                    <div role="search">
+    <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+        <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+    </form>
+</div>
+                </div>
+            </div>
+            <nav class="nav">
+                <ul class="root">
+                    <li class="toctree-l1">
+<a class="nav-item" href="../../..">Home</a></li>
+                    <li class="toctree-l1"><button class="section nav-item">Projects</button>
+<ul class="subnav">
+    <li class="toctree-l2"><a class="nav-item" href="../../../projects/">Index</a></li>
+</ul></li>
+                    <li class="toctree-l1"><button class="section nav-item">Wiki</button>
+<ul class="subnav">
+    <li class="toctree-l2"><button class="section nav-item hide">Devops</button>
+<ul class="subnav hide">
+    <li class="toctree-l3"><a class="nav-item" href="../../Devops/Ansible/">Ansible tips</a></li>
+</ul></li>
+    <li class="toctree-l2 current"><button class="section nav-item">Linux</button>
+<ul class="subnav">
+    <li class="toctree-l3"><a class="nav-item" href="../Docker/">Docker</a></li>
+    <li class="toctree-l3 current"><a class="nav-item current" href="./">NetworkManager</a>
+<ul class="subnav">
+<li class="toctree-l4"><a class="nav-item toc" href="#basic-configurations">Basic configurations</a></li>
+<li class="toctree-l4"><a class="nav-item toc" href="#advanced-config">Advanced config</a></li>
+<li class="toctree-l4"><a class="nav-item toc" href="#split-dns-setup">Split DNS setup</a></li>
+</ul></li>
+    <li class="toctree-l3"><a class="nav-item" href="../OneLiners/">One LIners</a></li>
+    <li class="toctree-l3">
+<a class="nav-item" href="../PythonDev/">PythonDev</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../SystemdNetwork/">Systemd-network</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../firewalld/">Firewalld</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../ssh/">SSH</a></li>
+</ul></li>
+    <li class="toctree-l2"><button class="section nav-item hide">MySQL</button>
+<ul class="subnav hide">
+    <li class="toctree-l3"><a class="nav-item" href="../../MySQL/sql-cheat/">SQL Cheat Sheet</a></li>
+</ul></li>
+    <li class="toctree-l2"><button class="section nav-item hide">Notes</button>
+<ul class="subnav hide">
+    <li class="toctree-l3"><a class="nav-item" href="../../Notes/ExplainedShortly/">Learn quickly new techs</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../../Notes/Git/">Git</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../../Notes/LongLiners/">Long Liners</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../../Notes/MacOSX/">MacOSX tricks</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../../Notes/NoCoreUtils/">No Core Utils</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../../Notes/OneLiners/">One Liners</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../../Notes/VPNUsers/">VPN as users</a></li>
+</ul></li>
+    <li class="toctree-l2"><button class="section nav-item hide">OPNSense</button>
+<ul class="subnav hide">
+    <li class="toctree-l3"><a class="nav-item" href="../../OPNSense/basics/">Basics setups</a></li>
+</ul></li>
+    <li class="toctree-l2"><button class="section nav-item hide">OpenWRT</button>
+<ul class="subnav hide">
+    <li class="toctree-l3"><a class="nav-item" href="../../OpenWRT/backup/">Backup and restore OpenWRT</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../../OpenWRT/base/">OpenWRT</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../../OpenWRT/hardware/">Hardware</a></li>
+</ul></li>
+</ul></li>
+                </ul>
+            </nav>
+            <div class="repo">
+    <div class="link">
+        <a href="https://github.com/mrjk/wiki-tech" class="fa fa-github"> GitHub</a>
+    </div>
+    <div class="previous"><a href="../Docker/">&laquo; Previous</a></div>
+    <div class="next"><a href="../OneLiners/">Next &raquo;</a></div>
+</div>
+        </aside>
+        <div id="spacer"><button class="arrow"></button></div>
+        <main>
+            <div class="home-top">
+                <button class="hamburger"></button>
+                <a href="../../.." class="site-name"> Jeznet Notes</a>
+            </div>
+            <div id="main">
+                <nav class="breadcrumbs">
+<ul>
+    <li>Wiki &raquo; </li><li>Linux</li>
+</ul>
+</nav>
+                <div id="content"><h1 id="networkmanager">NetworkManager</h1>
+<h2 id="basic-configurations">Basic configurations</h2>
+<p>Check status:</p>
+<pre><code>systemctl status NetworkManager || systemctl status network-manager
+</code></pre>
+<h2 id="advanced-config">Advanced config</h2>
+<h3 id="spoof-wifi-mac-address">Spoof wifi mac address</h3>
+<p>Wifi mac adress anon and spoof:</p>
+<pre><code>cat /etc/NetworkManager/conf.d/macspoof.conf 
+# [connection]
+# wifi.cloned-mac-address=b2:ee:ff:aa:bb:e2
+# wifi.scan-rand-mac-address=no
+
+# How to apply ?
+# systemctl  restart NetworkManager
+# HOw to check status ?
+# macchanger -s wlp2s0
+# ip link show wlp2s0
+</code></pre>
+<h2 id="split-dns-setup">Split DNS setup</h2>
+<p>This setup aims to setup basic infra for local development.
+Consists in:
+* Providing DNS
+* HTTP proxy</p>
+<p>There are few methods to do that:
+* Split DNS with systemd-resolved (See here ...)
+* NetworkManager + dnsmasq
+* Unbound</p>
+<h3 id="networkmanager-dnsmasq">NetworkManager + dnsmasq</h3>
+<p>Tell networkmanager to run its own dnsmasq:</p>
+<pre><code>cat /etc/NetworkManager/conf.d/dnsmasq.conf
+[main]
+dns=dnsmasq
+
+</code></pre>
+<p>Configure dnsmasq:</p>
+<pre><code>$ cat /etc/NetworkManager/dnsmasq.d/00-box.conf 
+
+# This file directs dnsmasq to forward any request to resolve
+# names under the .homelab domain to 172.31.0.1, my 
+# home DNS server.
+server=/box/10.127.0.10
+
+
+# /etc/NetworkManager/dnsmasq.d/01-laplab.conf
+# This file sets up the local lablab domain and 
+# defines some aliases and a wildcard.
+local=/laplab/
+# The below defines a Wildcard DNS Entry.
+address=/.ose.laplab/192.168.101.125
+# Below I define some host names.  I also pull in   
+address=/openshift.laplab/192.168.101.120
+address=/openshift-int.laplab/192.168.101.120
+
+# By default, the plugin does not read from /etc/hosts.  
+# This forces the plugin to slurp in the file.
+#
+# If you didn't want to write to the /etc/hosts file.  This could
+# be pointed to another file.
+#
+# addn-hosts=/etc/hosts
+
+
+</code></pre>
+<h3 id="apply-and-check">Apply and check</h3>
+<p>Reload Network-Manager:</p>
+<pre><code>systemctl  reload NetworkManager
+</code></pre>
+<p>Check dnsmasq is really running:</p>
+<pre><code>$ pstree -alup $(pidof NetworkManager)
+NetworkManager,1438674 --no-daemon
+  ├─dnsmasq,1441866,nobody --no-resolv --keep-in-foreground --no-hosts --bind-interfaces --pid-file=/var/run/NetworkManager/dnsmasq.pid --listen-address=127.0.0.1 --cache-size=400 --clear-on-reload --conf-file=/dev/null --proxy-dnssec --enable-dbus=org.freedesktop.NetworkManager.dnsmasq --conf-dir=/etc/NetworkManager/dnsmasq.d
+  ├─{NetworkManager},1438675
+  └─{NetworkManager},1438676
+</code></pre>
+<p>Check dnsmasq is really listening:</p>
+<pre><code> netstat  -lntpu | grep 1:53
+tcp        0      0 127.0.0.1:53            0.0.0.0:*               LISTEN      1441866/dnsmasq     
+udp        0      0 127.0.0.1:53            0.0.0.0:*                           1441866/dnsmasq     
+
+</code></pre>
+<p>Check dnsmasq is really working:</p>
+<pre><code>dig @10.127.0.10 toto.box
+dig toto.box
+ping toto.box
+</code></pre></div>
+                <footer>
+    <div class="footer-buttons">
+        <div class="previous"><a href="../Docker/" title="Docker"><span>Previous</span></a></div>
+        <div class="next"><a href="../OneLiners/" title="One LIners"><span>Next</span></a></div>
+    </div>
+    <div class="footer-note">
+        <p>
+            Built with <a href="http://www.mkdocs.org">MkDocs</a> using
+            <a href="https://github.com/daizutabi/mkdocs-ivory">Ivory theme</a>.
+        </p>
+    </div>
+</footer>
+            </div>
+        </main>
+    </div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js"></script>
+    <script src="../../../search/main.js"></script>
+</body>
+
+</html>

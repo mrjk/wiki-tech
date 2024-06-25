@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../../img/favicon.ico">
+    <title>Firewalld &mdash; Jeznet Notes</title>
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/tonsky/FiraCode@1.206/distr/fira_code.css">
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.8.1/css/v4-shims.css">
+    <link rel="stylesheet" href="../../../css/theme.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+    <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script>
+        hljs.initHighlightingOnLoad();
+    </script> 
+</head>
+
+<body ontouchstart="">
+    <div id="container">
+        <aside>
+            <div class="home">
+                <div class="title">
+                    <button class="hamburger"></button>
+                    <a href="../../.." class="site-name"> Jeznet Notes</a>
+                </div>
+                <div class="search">
+                    <div role="search">
+    <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+        <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+    </form>
+</div>
+                </div>
+            </div>
+            <nav class="nav">
+                <ul class="root">
+                    <li class="toctree-l1">
+<a class="nav-item" href="../../..">Home</a></li>
+                    <li class="toctree-l1"><button class="section nav-item">Projects</button>
+<ul class="subnav">
+    <li class="toctree-l2"><a class="nav-item" href="../../../projects/">Index</a></li>
+</ul></li>
+                    <li class="toctree-l1"><button class="section nav-item">Wiki</button>
+<ul class="subnav">
+    <li class="toctree-l2"><button class="section nav-item hide">Devops</button>
+<ul class="subnav hide">
+    <li class="toctree-l3"><a class="nav-item" href="../../Devops/Ansible/">Ansible tips</a></li>
+</ul></li>
+    <li class="toctree-l2 current"><button class="section nav-item">Linux</button>
+<ul class="subnav">
+    <li class="toctree-l3"><a class="nav-item" href="../Docker/">Docker</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../NetworkManager/">NetworkManager</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../OneLiners/">One LIners</a></li>
+    <li class="toctree-l3">
+<a class="nav-item" href="../PythonDev/">PythonDev</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../SystemdNetwork/">Systemd-network</a></li>
+    <li class="toctree-l3 current"><a class="nav-item current" href="./">Firewalld</a>
+<ul class="subnav">
+<li class="toctree-l4"><a class="nav-item toc" href="#basics">Basics</a></li>
+<li class="toctree-l4"><a class="nav-item toc" href="#modifications">Modifications</a></li>
+</ul></li>
+    <li class="toctree-l3"><a class="nav-item" href="../ssh/">SSH</a></li>
+</ul></li>
+    <li class="toctree-l2"><button class="section nav-item hide">MySQL</button>
+<ul class="subnav hide">
+    <li class="toctree-l3"><a class="nav-item" href="../../MySQL/sql-cheat/">SQL Cheat Sheet</a></li>
+</ul></li>
+    <li class="toctree-l2"><button class="section nav-item hide">Notes</button>
+<ul class="subnav hide">
+    <li class="toctree-l3"><a class="nav-item" href="../../Notes/ExplainedShortly/">Learn quickly new techs</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../../Notes/Git/">Git</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../../Notes/LongLiners/">Long Liners</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../../Notes/MacOSX/">MacOSX tricks</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../../Notes/NoCoreUtils/">No Core Utils</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../../Notes/OneLiners/">One Liners</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../../Notes/VPNUsers/">VPN as users</a></li>
+</ul></li>
+    <li class="toctree-l2"><button class="section nav-item hide">OPNSense</button>
+<ul class="subnav hide">
+    <li class="toctree-l3"><a class="nav-item" href="../../OPNSense/basics/">Basics setups</a></li>
+</ul></li>
+    <li class="toctree-l2"><button class="section nav-item hide">OpenWRT</button>
+<ul class="subnav hide">
+    <li class="toctree-l3"><a class="nav-item" href="../../OpenWRT/backup/">Backup and restore OpenWRT</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../../OpenWRT/base/">OpenWRT</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../../OpenWRT/hardware/">Hardware</a></li>
+</ul></li>
+</ul></li>
+                </ul>
+            </nav>
+            <div class="repo">
+    <div class="link">
+        <a href="https://github.com/mrjk/wiki-tech" class="fa fa-github"> GitHub</a>
+    </div>
+    <div class="previous"><a href="../SystemdNetwork/">&laquo; Previous</a></div>
+    <div class="next"><a href="../ssh/">Next &raquo;</a></div>
+</div>
+        </aside>
+        <div id="spacer"><button class="arrow"></button></div>
+        <main>
+            <div class="home-top">
+                <button class="hamburger"></button>
+                <a href="../../.." class="site-name"> Jeznet Notes</a>
+            </div>
+            <div id="main">
+                <nav class="breadcrumbs">
+<ul>
+    <li>Wiki &raquo; </li><li>Linux</li>
+</ul>
+</nav>
+                <div id="content"><h1 id="firewalld">Firewalld</h1>
+<p>Links:
+* https://docs.rockylinux.org/de/guides/security/firewalld-beginners/</p>
+<h2 id="basics">Basics</h2>
+<p>Ensure the firewalld service is running:</p>
+<pre><code>systemctl enable --now firewalld
+</code></pre>
+<p>Let's check current status:</p>
+<pre><code># systemctl status firewalld
+● firewalld.service - firewalld - dynamic firewall daemon
+   Loaded: loaded (/usr/lib/systemd/system/firewalld.service; enabled; vendor preset: enabled)
+   Active: active (running) since Wed 2022-02-23 12:36:26 EST; 1 months 10 days ago
+     Docs: man:firewalld(1)
+ Main PID: 23834 (firewalld)
+    Tasks: 3 (limit: 5065)
+   Memory: 9.7M
+   CGroup: /system.slice/firewalld.service
+           └─23834 /usr/libexec/platform-python -s /usr/sbin/firewalld --nofork --nopid
+
+# firewall-cmd --state
+running
+
+# firewall-cmd --list-all
+public (active)
+  target: default
+  icmp-block-inversion: no
+  interfaces: ens3
+  sources: 
+  services: cockpit consul_api_dns consul_api_http consul_lan_serf consul_rpc consul_wan_serf dhcpv6-client dns docker-swarm glusterfs http https node_exporter ssh
+  ports: 9100/tcp
+  protocols: 
+  forward: no
+  masquerade: no
+  forward-ports: 
+  source-ports: 
+  icmp-blocks: 
+  rich rules: 
+</code></pre>
+<p>We have a running service and some firewalld services. After any permanent changes, you need to reload the firewall:</p>
+<pre><code>firewall-cmd --reload
+</code></pre>
+<pre><code>Note: If you reload your configurations that haven't been made permanent, they'll disappear on you.
+</code></pre>
+<p>List all opened ports</p>
+<pre><code>firewall-cmd --list-ports
+
+
+</code></pre>
+<p>To get an overview of effectively opened ports:</p>
+<pre><code>for i in $(firewall-cmd --list-services); do echo &quot;Service: $i&quot; ;firewall-cmd --info-service $i | grep ' ports:' ; done ; echo &quot;Direct ports:&quot;; firewall-cmd --list-ports
+</code></pre>
+<h2 id="modifications">Modifications</h2>
+<h3 id="using-services">Using services</h3>
+<h3 id="direct-port">Direct port</h3>
+<pre><code>firewall-cmd --permanent --add-port=22/TCP
+firewall-cmd --reload
+</code></pre>
+<pre><code>firewall-cmd --add-port=22/tcp
+
+# To save it permanently
+firewall-cmd --runtime-to-permanent
+</code></pre></div>
+                <footer>
+    <div class="footer-buttons">
+        <div class="previous"><a href="../SystemdNetwork/" title="Systemd-network"><span>Previous</span></a></div>
+        <div class="next"><a href="../ssh/" title="SSH"><span>Next</span></a></div>
+    </div>
+    <div class="footer-note">
+        <p>
+            Built with <a href="http://www.mkdocs.org">MkDocs</a> using
+            <a href="https://github.com/daizutabi/mkdocs-ivory">Ivory theme</a>.
+        </p>
+    </div>
+</footer>
+            </div>
+        </main>
+    </div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js"></script>
+    <script src="../../../search/main.js"></script>
+</body>
+
+</html>

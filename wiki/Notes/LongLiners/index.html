@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../../../img/favicon.ico">
+    <title>Long Liners &mdash; Jeznet Notes</title>
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:400,700">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/tonsky/FiraCode@1.206/distr/fira_code.css">
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.8.1/css/v4-shims.css">
+    <link rel="stylesheet" href="../../../css/theme.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+    <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script>
+        hljs.initHighlightingOnLoad();
+    </script> 
+</head>
+
+<body ontouchstart="">
+    <div id="container">
+        <aside>
+            <div class="home">
+                <div class="title">
+                    <button class="hamburger"></button>
+                    <a href="../../.." class="site-name"> Jeznet Notes</a>
+                </div>
+                <div class="search">
+                    <div role="search">
+    <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+        <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+    </form>
+</div>
+                </div>
+            </div>
+            <nav class="nav">
+                <ul class="root">
+                    <li class="toctree-l1">
+<a class="nav-item" href="../../..">Home</a></li>
+                    <li class="toctree-l1"><button class="section nav-item">Projects</button>
+<ul class="subnav">
+    <li class="toctree-l2"><a class="nav-item" href="../../../projects/">Index</a></li>
+</ul></li>
+                    <li class="toctree-l1"><button class="section nav-item">Wiki</button>
+<ul class="subnav">
+    <li class="toctree-l2"><button class="section nav-item hide">Devops</button>
+<ul class="subnav hide">
+    <li class="toctree-l3"><a class="nav-item" href="../../Devops/Ansible/">Ansible tips</a></li>
+</ul></li>
+    <li class="toctree-l2"><button class="section nav-item hide">Linux</button>
+<ul class="subnav hide">
+    <li class="toctree-l3"><a class="nav-item" href="../../Linux/Docker/">Docker</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../../Linux/NetworkManager/">NetworkManager</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../../Linux/OneLiners/">One LIners</a></li>
+    <li class="toctree-l3">
+<a class="nav-item" href="../../Linux/PythonDev/">PythonDev</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../../Linux/SystemdNetwork/">Systemd-network</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../../Linux/firewalld/">Firewalld</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../../Linux/ssh/">SSH</a></li>
+</ul></li>
+    <li class="toctree-l2"><button class="section nav-item hide">MySQL</button>
+<ul class="subnav hide">
+    <li class="toctree-l3"><a class="nav-item" href="../../MySQL/sql-cheat/">SQL Cheat Sheet</a></li>
+</ul></li>
+    <li class="toctree-l2 current"><button class="section nav-item">Notes</button>
+<ul class="subnav">
+    <li class="toctree-l3"><a class="nav-item" href="../ExplainedShortly/">Learn quickly new techs</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../Git/">Git</a></li>
+    <li class="toctree-l3 current"><a class="nav-item current" href="./">Long Liners</a>
+<ul class="subnav">
+</ul></li>
+    <li class="toctree-l3"><a class="nav-item" href="../MacOSX/">MacOSX tricks</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../NoCoreUtils/">No Core Utils</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../OneLiners/">One Liners</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../VPNUsers/">VPN as users</a></li>
+</ul></li>
+    <li class="toctree-l2"><button class="section nav-item hide">OPNSense</button>
+<ul class="subnav hide">
+    <li class="toctree-l3"><a class="nav-item" href="../../OPNSense/basics/">Basics setups</a></li>
+</ul></li>
+    <li class="toctree-l2"><button class="section nav-item hide">OpenWRT</button>
+<ul class="subnav hide">
+    <li class="toctree-l3"><a class="nav-item" href="../../OpenWRT/backup/">Backup and restore OpenWRT</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../../OpenWRT/base/">OpenWRT</a></li>
+    <li class="toctree-l3"><a class="nav-item" href="../../OpenWRT/hardware/">Hardware</a></li>
+</ul></li>
+</ul></li>
+                </ul>
+            </nav>
+            <div class="repo">
+    <div class="link">
+        <a href="https://github.com/mrjk/wiki-tech" class="fa fa-github"> GitHub</a>
+    </div>
+    <div class="previous"><a href="../Git/">&laquo; Previous</a></div>
+    <div class="next"><a href="../MacOSX/">Next &raquo;</a></div>
+</div>
+        </aside>
+        <div id="spacer"><button class="arrow"></button></div>
+        <main>
+            <div class="home-top">
+                <button class="hamburger"></button>
+                <a href="../../.." class="site-name"> Jeznet Notes</a>
+            </div>
+            <div id="main">
+                <nav class="breadcrumbs">
+<ul>
+    <li>Wiki &raquo; </li><li>Notes</li>
+</ul>
+</nav>
+                <div id="content"><h1 id="long-liners">Long Liners</h1>
+<p>List all docker container IPs and ports:</p>
+<pre><code>function dip() {
+        _print_container_info() {
+            local container_id
+            local container_ports
+            local container_ip
+            local container_name
+            container_id=&quot;${1}&quot;
+
+            container_ports=( $(docker port &quot;$container_id&quot; | grep -o &quot;0.0.0.0:.*&quot; | cut -f2 -d:) )
+            container_name=&quot;$(docker inspect --format &quot;{{ .Name }}&quot; &quot;$container_id&quot; | sed 's/\///')&quot;
+            container_ip=&quot;$(docker inspect --format &quot;{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}&quot; &quot;$container_id&quot;)&quot;
+            printf &quot;%-13s %-40s %-20s %-80s\n&quot; &quot;$container_id&quot; &quot;$container_name&quot; &quot;$container_ip&quot; &quot;${container_ports[*]}&quot;
+        }
+
+        local container_id
+        container_id=&quot;$1&quot;
+        printf &quot;%-13s %-40s %-20s %-80s\n&quot; 'Container Id' 'Container Name' 'Container IP' 'Container Ports'
+        if [ -z &quot;$container_id&quot; ]; then
+            local container_id
+            docker ps -a --format &quot;{{.ID}}&quot; | while read -r container_id ; do
+                _print_container_info  &quot;$container_id&quot;
+            done
+        else
+            _print_container_info  &quot;$container_id&quot;
+        fi
+}
+</code></pre></div>
+                <footer>
+    <div class="footer-buttons">
+        <div class="previous"><a href="../Git/" title="Git"><span>Previous</span></a></div>
+        <div class="next"><a href="../MacOSX/" title="MacOSX tricks"><span>Next</span></a></div>
+    </div>
+    <div class="footer-note">
+        <p>
+            Built with <a href="http://www.mkdocs.org">MkDocs</a> using
+            <a href="https://github.com/daizutabi/mkdocs-ivory">Ivory theme</a>.
+        </p>
+    </div>
+</footer>
+            </div>
+        </main>
+    </div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme.js"></script>
+    <script src="../../../search/main.js"></script>
+</body>
+
+</html>
